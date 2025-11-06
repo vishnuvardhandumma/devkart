@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devkart-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devkart
+  template:
+    metadata:
+      labels:
+        app: devkart
+    spec:
+      containers:
+      - name: devkart
+        image: vishnurupi/devkart:latest
+        ports:
+        - containerPort: 5000
