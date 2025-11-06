@@ -10,9 +10,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh '''
+                    bat """
                     docker build -t ${DOCKERHUB_USER}/devkart:latest .
-                    '''
+                    """
                 }
             }
         }
@@ -21,10 +21,10 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-                        sh '''
-                        echo $PASS | docker login -u $USER --password-stdin
-                        docker push ${USER}/devkart:latest
-                        '''
+                        bat """
+                        echo %PASS% | docker login -u %USER% --password-stdin
+                        docker push %USER%/devkart:latest
+                        """
                     }
                 }
             }
@@ -32,8 +32,8 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f service.yaml'
+                bat 'kubectl apply -f deployment.yaml'
+                bat 'kubectl apply -f service.yaml'
             }
         }
     }
