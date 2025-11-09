@@ -1,31 +1,110 @@
+/* General Body Styling */
 body {
-    background: #f5f7fa;
-    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #111;
+    margin: 0;
 }
 
-.title {
-    font-size: 48px;
+/* Navbar Styling */
+.navbar-brand {
+    color: #ff9900 !important; /* Amazon-orange */
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #ff9900 !important;
+}
+
+/* Hero / Carousel Section */
+.hero-section {
+    background: linear-gradient(to right, #f7f7f7, #e8e8e8);
+}
+
+.carousel-caption h3 {
+    font-size: 36px;
     font-weight: bold;
-    color: #2d3436;
 }
 
-.subtitle {
-    font-size: 20px;
-    color: #636e72;
+.carousel-caption p {
+    font-size: 18px;
 }
 
+/* Product Card Styling */
 .product-card {
-    transition: transform 0.2s;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Product Prices */
 .price {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
-    color: #0984e3;
+    color: #b12704; /* Amazon-style red */
+}
+
+/* Card Titles */
+.card-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn-warning {
+    background-color: #ffd814;
+    border-color: #ffd814;
+}
+
+.btn-warning:hover {
+    background-color: #f7ca00;
+    border-color: #f7ca00;
+}
+
+.btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+/* Product Ratings */
+.rating i {
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+/* Filters and Category Buttons */
+.filter-btn {
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-caption h3 {
+        font-size: 28px;
+    }
+    .carousel-caption p {
+        font-size: 16px;
+    }
+    .price {
+        font-size: 18px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
 }
